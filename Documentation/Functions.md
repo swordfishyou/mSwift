@@ -28,6 +28,6 @@ Type inference and _function composition_ make such code short and clear, take a
 getContents |> lines |> countElements >>> "http://github.com"
 ```
 
-Here order of the execution is changed. This is done in order to use function composition with [curried functions](/Currying.md).
+Here the order of execution is changed. This is done in order to use function composition with [curried functions](/Currying.md).
 
 We've already discussed both `Array` and `Optional` and have seen they are specific containers. Applying functions to such values differs a bit, but still both these types provide handful interface for _pipeline_ application.
