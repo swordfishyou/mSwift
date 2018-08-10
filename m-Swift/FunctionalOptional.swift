@@ -1,7 +1,7 @@
 import Foundation
 
-infix operator <?>: ApplicativePrecedence
-public func <?><A, B>(_ function: (A) -> B, arg: A?) -> B? {
+infix operator <^>: ApplicativePrecedence
+public func <^><A, B>(_ function: (A) -> B, arg: A?) -> B? {
     return arg.map(function)
 }
 

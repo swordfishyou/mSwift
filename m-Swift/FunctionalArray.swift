@@ -1,6 +1,6 @@
 import Foundation
 
-public func <?><A, B>(_ function: (A) -> B, arg: [A]) -> [B] {
+public func <^><A, B>(_ function: (A) -> B, arg: [A]) -> [B] {
     return arg.map(function)
 }
 
