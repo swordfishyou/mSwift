@@ -9,7 +9,23 @@ Consider a function `f` taking a single argument `x` of type `A`. If we execute 
 Functions also may take multiple arguments. They also have their own types, like `(A, B) -> C` or `(A, B, C) -> D` and so on. Such notation is _generic_ and we can use any types, even if all of them are the same.
 
 ## Pure functions
-Our functions often use properties of classes, structures or some external constants. We also might change (_mutate_) variable's value in function. Such functions are _impure_, since result of their execution depends on some _external_ values, not only the arguments. In contrast, _pure function_ result depends only on arguments the function takes. Moreover, pure functions don't mutate any variables. All the things making a function impure are called _side effects_.
+Our functions often use properties of classes, structures or some external constants. We also might change (_mutate_) variable's value in function. Such functions are _impure_, since result of their execution depends on some _external_ values, not only the arguments. 
+```swift
+func getContents(from url: String) -> String {
+    if !self.isLoading {
+        return self.loader.load(url)
+    }
+}
+```
+
+Function `getContents` is impure since it checks some external state and performs IO operation. Even functions like `print` are impure since they perfom an IO action. All the things making a function impure are called _side effects_.
+
+In contrast, _pure function_ result depends only on arguments the function takes. Moreover, pure functions don't mutate any variables, nor perform IO actions.
+```swift
+func lines(in input: String) -> [String] {
+    return input.components(separatedBy: CharacterSet.newlines)
+}
+```
 
 In OOP realities it's pretty hard to avoid side effects since they are not considered as something wrong. Moreover, trying to avoid side effects introduces a level of unnececary complexity of the code, brings up front questions like memory management, mutability and so on. Generally speaking, pure functions in OOP are not even needed.
 
@@ -28,6 +44,6 @@ Type inference and _function composition_ make such code short and clear, take a
 getContents |> lines |> countElements >>> "http://github.com"
 ```
 
-Here the order of execution is changed. This is done in order to use function composition with [curried functions](/Currying.md).
+Here the order of execution is changed. This is done in order to use function composition with [curried functions](../Documentation/Currying.md).
 
 We've already discussed both `Array` and `Optional` and have seen they are specific containers. Applying functions to such values differs a bit, but still both these types provide handful interface for _pipeline_ application.
