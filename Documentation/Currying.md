@@ -1,5 +1,5 @@
 # Currying
-Function can take a different number of arguments. If we want to stay DRY we need a technique that allows us apply function of any arguments to any number of arguments. _Currying_ is such technique. 
+Function can take a different number of arguments. If we want to stay DRY we need a technique that allows us apply function of any arguments to any number of arguments. _Currying_ is such technique. In languages like Haskell functions are curried by default. **mSwift** overloads `curry` for functions that take up to four arguments.
 
 Currying translates the evaluation of a function that takes multiple arguments into evaluating a sequence of functions, each with a single argument:
 ```swift
