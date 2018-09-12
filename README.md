@@ -1,11 +1,11 @@
 # mSwift
 A simple eDSL introducing functional approach to pure calculations with `Optional` and `Array` types.
 
-- [Functions](../Documentation/Functions.md)
-- [Currying and partial application](../Documentation/Currying.md)
+- [Functions](/Documentation/Functions.md)
+- [Currying and partial application](/Documentation/Currying.md)
 - Usage
-    - **Applicative** [Plain functions](../Documentation/Applicative.md#apply-a-function), [Function composition](../Documentation/Applicative.md#function-composition), [Optional](../Documentation/Applicative.md#apply-a-function-to-optional)
-    - **Binding** [Optional](../Documentation/Binding.md)
+    - **Applicative** [Plain functions](/Documentation/Applicative.md#apply-a-function), [Function composition](/Documentation/Applicative.md#function-composition), [Optional](/Documentation/Applicative.md#apply-a-function-to-optional)
+    - **Binding** [Optional](/Documentation/Binding.md)
 
 ## Motivation
 Functional languages like Haskell or Erlang have robust and clear syntax for pure computations. Such code is easy to understand, it's clear and doesn't break control flow. On a daily basis we don't perform pure computations, but when we do we write a lot of code. This small eDSL is designed to stay DRY in such cases.
